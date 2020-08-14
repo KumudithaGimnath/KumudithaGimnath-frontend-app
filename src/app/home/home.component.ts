@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
 
 
 studentGet() {
-  return this.http.get('https://kg-web-app.azurewebsites.net/users');
+  return this.http.get('https://kgfrontdoor.azurefd.net/users');
 }
 
 loadStudentInformation() {

@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class HomeService {
 
-  SERVER_URL = 'https://kg-web-app.azurewebsites.net/file/upload';
+  SERVER_URL = 'https://kgfrontdoor.azurefd.net/file/upload';
 
   constructor(private httpClient: HttpClient) {
   }
