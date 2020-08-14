@@ -1,0 +1,52 @@
+<!-- <mat-card style="width: 650px; overflow: elipses; margin: 0 auto; margin-top: 30px;">
+  <pre>
+    {{user | json}}
+  </pre>
+</mat-card>
+<p>
+  <button name="Profile" (click)="profileClicked()">Get My Profile</button>
+</p>
+<mat-card *ngIf="profile" style="width: 650px; overflow: elipses; margin: 0 auto; margin-top: 30px;">
+  <pre>
+    {{profile | json}}
+  </pre>
+</mat-card> -->
+
+<div class="mat-elevation-z8">
+
+  <div *ngIf="resource" class="alert alert-success" role="alert">
+   {{resource}}
+  </div>
+
+  <!-- <div style="display: flex; justify-content: center; width: 100%">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </div> -->
+
+  <div>
+    <table mat-table  [dataSource]="data" width="60%">
+      <!-- id Definition -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id</th>
+        <td mat-cell *matCellDef="let eliment"> {{eliment.id}} </td>
+      </ng-container>
+
+      <!-- user Definition -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name</th>
+        <td mat-cell *matCellDef="let eliment"> {{eliment.name}} </td>
+      </ng-container>
+
+      <!-- Header and Row Declarations -->
+      <tr mat-header-row *matHeaderRowDef="displayedColunms"></tr>
+      <tr mat-row *matRowDef="let row; columns:displayedColunms ;"></tr>
+    </table>
+  </div>
+
+  <div style="text-align:center; margin-top: 50px; margin-bottom: 100px">
+    <button mat-raised-button color="accent" (click)="onClick()">Choose File</button>
+    <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*"
+           style="display:none;"/>
+  </div>
+
+
+</div>
